@@ -95,7 +95,7 @@
         
         for (NSInteger startYear = 1970; startYear <= currentYear; startYear ++)
         {
-            [_years addObject:[NSString stringWithFormat:@"%ld年", startYear]];
+            [_years addObject:[NSString stringWithFormat:@"%zi年", startYear]];
         }
     }
     
