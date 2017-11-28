@@ -225,7 +225,8 @@
 				TargetAttributes = {
 					1E088E5C1E6FD45000FE43FF = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = UNB47A8SLN;
+						ProvisioningStyle = Manual;
 					};
 					1E088E751E6FD45100FE43FF = {
 						CreatedOnToolsVersion = 8.1;
@@ -442,10 +443,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = UNB47A8SLN;
 				INFOPLIST_FILE = XCDatePickerViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ylh.XCDatePickerViewExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylh.XiaoYiService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3926d080-d5b6-467e-a50c-93f451953c7c";
+				PROVISIONING_PROFILE_SPECIFIER = XiaoYiServiceDevelpment;
 			};
 			name = Debug;
 		};
@@ -453,10 +458,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = UNB47A8SLN;
 				INFOPLIST_FILE = XCDatePickerViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ylh.XCDatePickerViewExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylh.XiaoYiService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3926d080-d5b6-467e-a50c-93f451953c7c";
+				PROVISIONING_PROFILE_SPECIFIER = XiaoYiServiceDevelpment;
 			};
 			name = Release;
 		};

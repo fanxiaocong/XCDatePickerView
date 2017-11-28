@@ -20,7 +20,7 @@
 #define DURATION            0.3     // 弹出的时间
 
 #define CANCEL_BUTTON_TITLE_COLOR   [UIColor darkTextColor]     // 取消按钮的文字颜色
-#define ENTER_BUTTON_TITLE_COLOR    [UIColor blueColor]         // 确认按钮的文字颜色
+#define ENTER_BUTTON_TITLE_COLOR    [UIColor orangeColor]       // 确认按钮的文字颜色
 
 
 @interface XCDatePickerView ()<UIPickerViewDelegate, UIPickerViewDataSource>
@@ -51,6 +51,7 @@
 @property (copy, nonatomic) NSString *selectedMinutes;
 
 @end
+
 
 @implementation XCDatePickerView
 
@@ -257,6 +258,7 @@
         {
             customView.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
             customView.fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+            customView.datePicker.minuteInterval = 30;
             break;
         }
         case XCDateFormatTypeHalfHour:
@@ -509,19 +511,5 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
