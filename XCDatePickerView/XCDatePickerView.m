@@ -258,7 +258,6 @@
         {
             customView.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
             customView.fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-            customView.datePicker.minuteInterval = 30;
             break;
         }
         case XCDateFormatTypeHalfHour:
