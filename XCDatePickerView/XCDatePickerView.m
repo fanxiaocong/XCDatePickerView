@@ -6,7 +6,6 @@
 //  Copyright © 2016年 Injoinow. All rights reserved.
 //
 
-
 #import "XCDatePickerView.h"
 
 #import "UIView+XCExtension.h"
@@ -176,7 +175,8 @@
         datePicker.backgroundColor   = [UIColor whiteColor];
         datePicker.layer.borderColor = [UIColor lightGrayColor].CGColor;
         datePicker.layer.borderWidth = 0.5;
-        
+        datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh_CN"];
+
         _datePicker = datePicker;
         
         [self.contentView addSubview:datePicker];
@@ -271,11 +271,25 @@
         }
         case XCDateFormatTypeYear:
         {
+//            customView.datePicker.hidden = YES;
+//            customView.pickerView.hidden = NO;
+//            NSMutableString * yearStr = [NSMutableString stringWithString:customView.years[0]];
+//            [yearStr deleteCharactersInRange:NSMakeRange(yearStr.length - 1, 1)];
+//            customView.selectedDateStr = yearStr;
             customView.datePicker.hidden = YES;
             customView.pickerView.hidden = NO;
-            NSMutableString * yearStr = [NSMutableString stringWithString:customView.years[0]];
+            
+            // 选中的时间
+            NSDate *selectedDate = date ?: [NSDate date];
+            NSString *selectedStr = [customView timeWithFormattersString:@"yyyy年" timeDate:selectedDate];
+            if (![customView.years containsObject:selectedStr]) {
+                selectedStr = customView.years.firstObject;
+            }
+            NSInteger row = [customView.years indexOfObject:selectedStr];
+            NSMutableString *yearStr = [NSMutableString stringWithString:selectedStr];
             [yearStr deleteCharactersInRange:NSMakeRange(yearStr.length - 1, 1)];
             customView.selectedDateStr = yearStr;
+            [customView.pickerView selectRow:row inComponent:0 animated:YES];
             break;
         }
         case XCDateFormatTypeOther:

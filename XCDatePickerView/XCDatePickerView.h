@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, XCDateFormatType)
  *  @param dateType            时间显示的类型
  *  @param maxDate             最大时间
  *  @param minDate             最小时间
- *  @param didClickEnterHandle 点击确定按钮的回调
+ *  @param didClickEnterHandle 点击确定按钮的回调（XCDateFormatTypeYear、XCDateFormatTypeOther 回调的时间为空）
  */
 + (void)showDatePickViewWithDateFormatType:(XCDateFormatType)dateType
                                    maxDate:(NSDate *)maxDate
@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger, XCDateFormatType)
  * @param  date                默认时间
  *  @param maxDate             最大时间
  *  @param minDate             最小时间
- *  @param didClickEnterHandle 点击确定按钮的回调
+ *  @param didClickEnterHandle 点击确定按钮的回调（XCDateFormatTypeYear、XCDateFormatTypeOther 回调的时间为空）
  */
 + (void)showDatePickViewWithDateFormatType:(XCDateFormatType)dateType
                                       date:(NSDate *)date

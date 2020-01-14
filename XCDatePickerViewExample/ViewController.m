@@ -17,10 +17,13 @@
 @end
 
 @implementation ViewController
+{
+    NSDate *_date;
+}
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-
 }
 
 - (IBAction)chooseTypeAction:(UIButton *)sender
@@ -31,10 +34,11 @@
 
 - (IBAction)show:(UIButton *)sender
 {
-    [XCDatePickerView showDatePickViewWithDateFormatType:self.type date:NULL maxDate:NULL minDate:NULL didClickEnterHandle:^(NSDate *selectedDate, NSString *selectedDateString) {
-        
+    __weak typeof(self)weakSelf = self;
+    [XCDatePickerView showDatePickViewWithDateFormatType:self.type date:_date maxDate:NULL minDate:NULL didClickEnterHandle:^(NSDate *selectedDate, NSString *selectedDateString) {
+        __strong typeof(self)strongSelf = weakSelf;
+        strongSelf->_date = selectedDate;
         NSLog(@"时间:   %@", selectedDateString);
-        
         [sender setTitle:selectedDateString forState:UIControlStateNormal];
     }];
 }
