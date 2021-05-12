@@ -176,6 +176,9 @@
         datePicker.layer.borderColor = [UIColor lightGrayColor].CGColor;
         datePicker.layer.borderWidth = 0.5;
         datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh_CN"];
+        if (@available(iOS 13.4, *)) {
+            datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
+        }
 
         _datePicker = datePicker;
         
@@ -309,6 +312,7 @@
     [customView insertSubview:maskView belowSubview:customView.contentView];
     
     customView.maskView = maskView;
+    customView.datePicker.frame = customView.pickerView.frame;
     
     // 点击了蒙板
     [maskView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:customView action:@selector(hide)]];
